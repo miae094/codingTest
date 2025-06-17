@@ -1,6 +1,8 @@
 package test.coding;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class CT12933 {
@@ -13,25 +15,30 @@ public class CT12933 {
 		 * 제한 조건 n은 1이상 8000000000 이하인 자연수입니다.
 		 */
 		
-		
+		System.out.println(solution(118372));
 
 	}
-	
+
 	public static long solution(long n) {
-        long answer = 0;
-        List<Long> arr = new ArrayList<Long>();
-        
-        while(n>10) {
-        	long result = n % 10;
-        	n = n/10;
-        	arr.add(result);
-        }
-        int[] rsArr = new int[arr.size()];
-        for(int i = 0 ; i < arr.size(); i++) {
-        	if(arr.get(i)>arr.get(i+1)) {
-        		
-        	}
-        }
-        return answer;
-    }
+		long answer = 0;
+		
+		int length = String.valueOf(n).length();
+		
+		List<Long> arr = new ArrayList<>();
+		for(int i = 0; i < length; i++) {
+			long temp1 = n%10;
+			arr.add(temp1);
+			n = n/10;
+		}
+		
+		Collections.sort(arr, Collections.reverseOrder());
+		StringBuilder sb = new StringBuilder();
+		for(Long num : arr) {
+		    sb.append(num);
+		}
+
+		answer = Long.parseLong(sb.toString());
+		
+		return answer;
+	}
 }
