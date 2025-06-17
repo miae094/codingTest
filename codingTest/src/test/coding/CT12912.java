@@ -1,4 +1,4 @@
-package kr.test.coding;
+package test.coding;
 
 public class CT12912 {
 

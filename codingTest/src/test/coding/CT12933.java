@@ -1,4 +1,4 @@
-package kr.test.coding;
+package test.coding;
 
 import java.util.ArrayList;
 import java.util.List;
